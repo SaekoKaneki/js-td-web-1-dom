@@ -14,7 +14,8 @@ EXERCICE 1 : sélectionner le titre "Merveilles du monde antique"
 de notre page web en utilisant la propriété childNodes
 (Aide : il s'agit du deuxième nœud enfant du sixième nœud enfant du nœud body)
 */
-
+let eMerveilles = document.querySelector("#contenu h2");
+console.log(eMerveilles);
 
 
 // 2. Sélection d'éléments selon leur balise
@@ -25,7 +26,8 @@ en utilisant la méthode getElementsByTagName()
 (Aide : il s'agit du premier titre h2 du document)
 - Afficher le nombre de titres h2 dans le document
 */
-
+let eMerveilles2 = document.getElementsByTagName("h2");
+console.log(eMerveilles2[0]);
 
 
 // 3. Sélection d'éléments selon leur classe
@@ -33,7 +35,10 @@ en utilisant la méthode getElementsByTagName()
 - Sélectionner et afficher (à l'aide d'une boucle)
 l'ensemble des éléments du document ayant pour classe "merveilles"
 */
-
+let eClassMerv = document.getElementsByClassName("merveilles");
+for (let i =0; i < eClassMerv.length; i++){
+    console.log(eClassMerv[i]);
+}
 
 
 
@@ -41,8 +46,8 @@ l'ensemble des éléments du document ayant pour classe "merveilles"
 /* EXERCICE 4 :
 - Sélectionner et afficher l'élément du document portant l'identifiant "nouvelles"
 */
-
-
+let eIdNouv = document.getElementById("nouvelles");
+console.log(eIdNouv);
 
 // 5. Chaînage de méthodes
 /* EXERCICE 5 :
@@ -50,11 +55,13 @@ l'ensemble des éléments du document ayant pour classe "merveilles"
 	le nombre d'enfants de l'élément d'id "antiques" ayant la classe "existe" 
 - Afficher l'enfant en question
 */
+let eIdandClass = document.getElementById("antiques").getElementsByClassName("existe");
+console.log(eIdandClass);
 // Affiche le nombre d'enfants de l'élément d'identifiant "antiques" ayant la classe "existe"
-
+/*1*/
 
 // Affiche l'enfant de l'élément d'id "antiques" ayant la classe "existe"
-
+/*li*/
 
 
 // 6. Sélection d'éléments à partir d'un sélecteur CSS
@@ -77,26 +84,32 @@ Elle renvoie la liste des éléments correspondant au sélecteur passé en param
 */
 
 // Nombre de paragraphes
-
+let eNbrPara = document.querySelectorAll("p");
+console.log(eNbrPara);
 
 // Le premier paragraphe
-
+let eNbrPara2 = document.querySelectorAll("h1~p");
+console.log(eNbrPara2);
 
 // Nombre de paragraphes à l'intérieur de l'élément d'id "contenu"
-
+let eNbrPara3 = document.querySelectorAll("#contenu p");
+console.log(eNbrPara3);
 
 // Le 2e paragraphe à l'intérieur de l'élément d'id "contenu"
-
+let eNbrPara4 = document.querySelectorAll("#contenu p:nth-child(2)");
+console.log(eNbrPara4);
 
 // Nombre d'éléments ayant la classe "existe"
-
+let eNbrPara5 = document.querySelectorAll(".existe");
+console.log(eNbrPara5);
 
 // Tous les éléments ayant la classe "existe"
 
 
 
 // Nombre d'enfants de l'élément d'id "antiques" ayant la classe "existe"
-
+let eNbrPara6 = document.querySelectorAll("#antiques .existe");
+console.log(eNbrPara6);
 
 // 6. b) La méthode querySelector()
 /*
@@ -108,9 +121,13 @@ La méthode querySelector() fonctionne comme querySelectorAll(), mais elle renvo
 */
 
 // Le premier paragraphe du document
+let ePara = document.querySelector("p");
+console.log(ePara);
 
 
 // Le premier (et seul) enfant de l'élément d'id "antiques" ayant la classe "existe"
+let ePara2 = document.querySelector("#antiques .existe");
+console.log(ePara2);
 
 
 /***********************************************
