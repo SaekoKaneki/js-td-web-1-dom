@@ -22,6 +22,12 @@ EXERCICE 1 :
 	(Aide : on lui ajoute (opérateur+=) une entrée sous la forme d'une balise <li>)
 3. Vider la liste de tout son contenu et la réafficher
 */
+let ulElt = document.querySelector("#langages");
+console.log(ulElt);
+ulElt.innerHTML += '<li>C</li>';
+console.log(ulElt);
+// ulElt.innerHTML = '';
+// console.log(ulElt);
 
 
 
@@ -36,7 +42,7 @@ EXERCICE 2 :
 Compléter le titre du document pour qu'il devienne
 "Quelques langages de programmation" et le réafficher
 */
-
+document.querySelector('h1').textContent += ' de programations';
 
 
 
@@ -46,6 +52,7 @@ Compléter le titre du document pour qu'il devienne
   Elle prend en paramètres le nom et la valeur de cet attribut.
 - On peut aussi modifier les attributs via la propriété qui les représente
 */
+
 /*
 EXERCICE 3 :
 1. Stocker le premier titre du document dans une variable titreElt et l'afficher
@@ -53,6 +60,10 @@ EXERCICE 3 :
 	- avec la méthode setAttribute()
 	- via la propriété id de l'élément h1
 */
+let titreElt = document.querySelector('h1');
+console.log(titreElt);
+// titreElt.setAttribute('id','titre');
+titreElt.id = 'titre';
 
 
 
@@ -72,7 +83,9 @@ EXERCICE 4 :
 - Lui ajouter la classe "titre"
 - L'afficher
 */
-
+titreElt.classList.remove("debut");
+titreElt.classList.add("titre");
+console.log(titreElt);
 
 
 
@@ -84,8 +97,12 @@ EXERCICE 5 :
 - Ajouter la classe "hide" manuellement dans le fichier HTML
 - Retester le script
 */
-
-
+let liElt = document.querySelector("li");
+liElt.classList.add('hide');
+if (liElt.classList == 'hide'){
+   liElt.classList.remove("hide");
+}
+console.log(liElt);
 
 
 
@@ -115,23 +132,32 @@ L'ajout d'un nouvel élément à une page web se décompose en trois opérations
 /*
 EXERCICE 6 : 
 Ajouter le langage "ruby" à la liste des langages :
-- 1. Créer un élément li et le stocker dans une variable rubyElt
+- 1. Créer un élément li et le stocker dans une variable pythonElt
 - 2. Lui ajouter un id "python" et y inscrire le texte "Python"
 - 3. L'ajouter dans l'ul d'id "langages"
 - 4. Afficher le contenu HTML de l'ul
 */
-
-
+let pythonElt = document.createElement('li');
+pythonElt.textContent = "Python";
+pythonElt.id = "python";
+document.querySelector("#langages").appendChild(pythonElt);
+console.log(document.querySelector("#langages"));
 
 
 // 2. Variantes pour ajouter un élément
 
 // 2.1. Création d'un noeud textuel avec la méthode createTextNode()
-
+let rubyElt = document.createElement('li');
+rubyElt.id = "python";
+rubyElt.appendChild(document.createTextNode("Ruby"));
+console.log(document.querySelector("#langages").appendChild(rubyElt));
 
 
 // 2.2. Ajout d'un noeud avant un autre noeud avec la méthode insertBefore()
-
+let perlElt = document.createElement('li');
+perlElt.id = "perl"
+perlElt.textContent = "Perle"
+document.querySelector('#langages').insertBefore(perlElt,document.querySelector('#php'));
 
 
 // 2.3. Choix de la position exacte du nouveau noeud
@@ -145,14 +171,15 @@ On peut définir encore plus précisément la position des éléments insérés 
 	* afterend: après l'élément existant lui-même ;
 - prend comme 2e paramètre une chaîne de caractères HTML qui représente le nouveau contenu à ajouter
 */
+//.insertAdjacentHTML("beforeend","<li>Python</li>")
 /*
 EXERCICE 7 : 
 Ajouter le langage "JavaScript" au tout début de la liste des langages
 dans une li d'id "javascript" avec la méthode insertAdjacentHTML()
 puis afficher le contenu HTML de l'ul
 */
-
-
+document.querySelector("#langages").insertAdjacentHTML("afterbegin","<li id='javascript'>JavaScript</li>");
+console.log(document.querySelector('#langages'))
 
 
 
@@ -172,10 +199,11 @@ EXERCICE 8 :
 - Remplacer le langage C# par un nouvel élément correspondant au langage CSS
 - Afficher le contenu HTML de la liste ainsi modifiée
 */
-
-
-
-
+let cssElt = document.createElement("li");
+cssElt.textContent = "CSS";
+cssElt.id = "css";
+document.querySelector("#langages").replaceChild(cssElt,document.querySelector("#csharp"));
+console.log(document.querySelector("#langages"));
 
 // 2. Supprimer un noeud existant
 /* La méthode removeChild() permet de supprimer un nœud, elle
@@ -187,7 +215,8 @@ EXERCICE 9 :
 - Supprimer l'élément correspondant au langage CSS que vous venez d'insérer
 - Réaffichez la liste des langages
 */
-
+document.querySelector('#langages').removeChild(document.querySelector('#css'));
+console.log(document.querySelector("#langages"));
 
 
 

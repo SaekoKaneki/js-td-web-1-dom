@@ -145,10 +145,10 @@ La propriété innerHTML permet de récupérer tout le contenu HTML d'un éléme
 */
 
 // Le contenu HTML de l'élément identifié par "contenu"
-
+console.log(document.querySelector("#contenu").innerHTML);
 
 // Le contenu HTML de l'ul qui n'a pas la classe "merveilles"
-
+console.log(document.querySelector("ul:nth-of-type(3)").innerHTML);
 
 
 // 2. Le contenu textuel
@@ -161,11 +161,11 @@ La propriété textContent renvoie tout le contenu textuel d'un élément du DOM
 */
 
 // Le contenu textuel de l'élément identifié par "contenu"
+console.log(document.querySelector("#contenu").textContent);
 
+// Le libellé du lien qui pointe vers https://fr.wikipedia.org/wiki/Sept_merveilles_du_monde
 
-// Le contenu textuel de l'élément identifié par "contenu"
-
-
+console.log(document.querySelector("li [href=\"https://fr.wikipedia.org/wiki/Sept_merveilles_du_monde\"]").textContent);
 
 // 3. Les attributs
 /*
@@ -180,16 +180,16 @@ La propriété textContent renvoie tout le contenu textuel d'un élément du DOM
 - Vérifier, grâce à la méthode hasAttribute(), la présence de l'attribut target sur le premier lien du document 
 */
 // Affiche l'attribut href du premier lien
-
+console.log(document.querySelector('a').getAttribute('href'));
 
 // Affiche l'identifiant de la première liste
-
+console.log(document.querySelector('ul').getAttribute('id'));
 
 // Affiche l'attribut href du premier lien
 
 
 // Vérifie la présence de l'attribut target sur le premier lien
-
+console.log(document.querySelector('a').hasAttribute('target'));
 
 
 // 4. Les classes
@@ -208,7 +208,7 @@ La propriété textContent renvoie tout le contenu textuel d'un élément du DOM
 
 // Liste des classes de l'élément identifié par "antiques"
 
-
+console.log(document.querySelector('#antiques').classList);
 // Affiche le nombre de classes que possède l'élément d'id "antiques"
 
 

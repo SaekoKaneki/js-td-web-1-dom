@@ -22,7 +22,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
 	  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
 */
 /* EXERCICE 1 :
-- Clibez le premier paragraphe de la page
+- Ciblez le premier paragraphe de la page
 - Modifiez ses propriétés de style par JavaScript :
 	* mettez la couleur du texte en #813050 ;
 	* ajoutez-lui des marges de 1em en haut et en bas ;
@@ -34,6 +34,16 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
 	* centrez-le autour d'une largeur de 5em;
 	* centrez-y le texte ;
 */
+let eP= document.querySelector('p');
+eP.style.color = '#813050';
+eP.style.margin = '1em 0'
+eP.style.backgroundColor = '#D8EFE3';
+eP.style.padding = '0.5em';
+eP.style.fontFamily = 'Baskerville, Baskerville Old Face, Garamond, Hoefler Text, Times New Roman, serif';
+eP.style.fontSize = '2em';
+eP.style.textAlign = 'center';
+
+
 
 
 
@@ -50,8 +60,12 @@ elle ne permet donc pas d'accéder aux styles qui se trouvent dans une feuille d
 Affichez la couleur du texte de chacun des trois paragraphes de la page
 */
 
-// 1. Les limites de la propriété style
 
+// 1. Les limites de la propriété style
+let eParagraph = document.querySelectorAll("p");
+console.log(eParagraph[0].style.color);
+console.log(eParagraph[1].style.color);
+console.log(eParagraph[2].style.color);
 
 
 // 2. La fonction getComputedStyle()
@@ -64,3 +78,5 @@ La fonction window.getComputedStyle() (https://developer.mozilla.org/fr/docs/Web
 /* EXEFCICE 3 :
 Affichez la police de caractère et la couleur du 3e paragraphe (qui a l'id "para")
 */
+let ePara = getComputedStyle(document.querySelector('#para'));
+console.log(ePara.fontFamily,ePara.color);
