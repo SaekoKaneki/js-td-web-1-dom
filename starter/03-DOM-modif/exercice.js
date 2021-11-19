@@ -27,10 +27,7 @@ let UlCreates= document.createElement("ul");
 UlCreates.id = "jeux";
 document.querySelector("body").appendChild(UlCreates);
 for (let i =0; i<aMesJeux.length; i++){
-    let LiCreates = document.querySelector("#jeux").insertAdjacentHTML("afterbegin",`<li>${i}</li>`);
-    for (let j =0; j<aMesCategories;j++){
-        LiCreates.textContent += `(${j})`;
-    }
+    document.querySelector("#jeux").insertAdjacentHTML("beforeend",`<li>${aMesJeux[i]} (${aMesCategories[i]})</li>`);
 }
 console.log(UlCreates);
 
