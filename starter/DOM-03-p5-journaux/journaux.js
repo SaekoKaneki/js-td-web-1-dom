@@ -15,3 +15,10 @@ Il a sans doute été simplifié à outrance dans un souci
 de rendre la génération la plus simple possible en JS.
 TODO : améliorer le balisage HTML généré !!! */
 
+aUrl =["http://lemonde.fr","http://lefigaro.fr","http://liberation.fr"];
+console.log(aUrl)
+let UlCreates= document.createElement("ul");
+document.querySelector("body").appendChild(UlCreates);
+for (let i = 0; i<aUrl.length; i++){
+    document.querySelector("ul").insertAdjacentHTML("beforeend", `<li><a href="${aUrl[i]}">${aUrl[i]}</a></li>`);
+}

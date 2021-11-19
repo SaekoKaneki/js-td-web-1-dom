@@ -13,15 +13,37 @@ SOURCE : https://github.com/oc-courses/javascript-web
         Le <a href="https://fr.wikipedia.org/wiki/Clavecin">clavecin</a>
     </li>
 - Écrivez la fonction possede qui vérifie qu'un élément avec un certain id possède une classe
-- Testez grâce à cette foncion 
+- Testez grâce à cette fonction
     - si l'élément d'id "saxophone" possède la classe "bois" (doit afficher true)
     - si l'élément d'id "saxophone" possède la classe "cuivre" (doit afficher false)
     - si l'élément d'id "trompette" possède la classe "cuivre" (doit afficher true)
     - si l'élément d'id "contrebasse" possède la classe "cordes" (doit afficher "Aucun élément ne possède l'id contrebasse")
 */
 
+function getInfosLiens() {
+    let eLink = document.getElementsByTagName("a").length;
+    let nombreLiens = eLink.length;
+    console.log(nombreLiens)
+    if (nombreLiens > 0) {
+        console.log(eLink[0].getAttribute("href"));
+        console.log(eLink[nombreLiens-1].getAttribute("href"));
+    }
 
+}
+document.querySelector("ul").insertAdjacentHTML("beforeend", `<li id="clavecin" class="cordes pincees">Le <a href="https://fr.wikipedia.org/wiki/Clavecin">clavecin</a></li>`);
+function getClass(idgetClass, classgetClass) {
+    let instrument = document.getElementById(idgetClass);
+    if (instrument == null){
+        console.log(`Aucun élément ne possède l'identifiant ${idgetClass}`)
+    }else{
+        console.log(instrument.classList.contains(classgetClass));
+    }
+}
 
+console.log(getInfosLiens())
+console.log(getClass("saxophone","bois"));
+console.log(getClass("saxophone","cuivre"));
+console.log(getClass( "trompette","cuivre"));
 
 
 

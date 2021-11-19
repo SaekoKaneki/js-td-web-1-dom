@@ -210,7 +210,7 @@ console.log(document.querySelector('a').hasAttribute('target'));
 
 console.log(document.querySelector('#antiques').classList);
 // Affiche le nombre de classes que possède l'élément d'id "antiques"
-
+console.log(document.querySelector('#antiques').classList.length);
 
 // Affiche la première classe que possède l'élément d'id "antiques"
 
